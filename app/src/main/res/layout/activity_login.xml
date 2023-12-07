@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F2F2F2">
+    android:background="#F2F2F2"
+    tools:context=".ui.login.LoginActivity">
 
     <ImageView
         android:id="@+id/iv_top_background"
@@ -142,7 +143,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_margin="8dp"
-                    tools:src="@drawable/facebook" />
+                    app:srcCompat="@drawable/facebook" />
 
                 <TextView
                     android:id="@+id/tv_facebook"
@@ -169,7 +170,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_margin="8dp"
-                    tools:src="@drawable/google" />
+                    app:srcCompat="@drawable/google" />
 
                 <TextView
                     android:id="@+id/tv_google"

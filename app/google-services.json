@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "931234646947",
+    "project_id": "insightmate-2023",
+    "storage_bucket": "insightmate-2023.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:931234646947:android:ddf69c325db1267ce2e816",
+        "android_client_info": {
+          "package_name": "com.company.insightmate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-1582TFYYfVIa9_CAQ8kCJlZFYVb8lo4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
