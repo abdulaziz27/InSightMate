@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">InSightMate</string>
+    <string name="title_money_detector">Money Detector</string>
+    <string name="title_color_detector">Color Detector</string>
+    <string name="title_document_reader">Document Reader</string>
+
+    <string name="camera_x">CameraX</string>
+    <string name="camera">Kamera</string>
+    <string name="gallery">Galeri</string>
+    <string name="upload">Unggah</string>
+    <string name="empty_image_warning">Silakan masukkan berkas gambar terlebih dahulu.</string>
+</resources>

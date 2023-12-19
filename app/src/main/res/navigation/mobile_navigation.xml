@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_money_detector">
+
+    <fragment
+        android:id="@+id/navigation_money_detector"
+        android:name="com.CH2PS211.insightmate.ui.moneydetector.MoneyDetectorFragment"
+        android:label="@string/title_money_detector"
+        tools:layout="@layout/fragment_money_detector" />
+
+    <fragment
+        android:id="@+id/navigation_color_detector"
+        android:name="com.CH2PS211.insightmate.ui.colordetector.ColorDetectorFragment"
+        android:label="@string/title_color_detector"
+        tools:layout="@layout/fragment_color_detector" />
+
+    <fragment
+        android:id="@+id/navigation_document_reader"
+        android:name="com.CH2PS211.insightmate.ui.documentreader.DocumentReaderFragment"
+        android:label="@string/title_document_reader"
+        tools:layout="@layout/fragment_document_reader" />
+</navigation>

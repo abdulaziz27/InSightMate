@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_money_detector"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_money_detector" />
+
+    <item
+        android:id="@+id/navigation_color_detector"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_color_detector" />
+
+    <item
+        android:id="@+id/navigation_document_reader"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/title_document_reader" />
+
+</menu>
