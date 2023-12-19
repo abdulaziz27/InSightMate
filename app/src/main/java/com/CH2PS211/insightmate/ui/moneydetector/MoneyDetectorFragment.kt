@@ -10,11 +10,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.activity.viewModels
 import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import com.CH2PS211.insightmate.CameraActivity
 import com.CH2PS211.insightmate.CameraActivity.Companion.CAMERAX_RESULT
 import com.CH2PS211.insightmate.R
@@ -36,7 +34,6 @@ class MoneyDetectorFragment : Fragment() {
 
     private var currentImageUri: Uri? = null
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -49,6 +46,8 @@ class MoneyDetectorFragment : Fragment() {
         binding.cameraXButton.setOnClickListener { startCameraX() }
         binding.galleryButton.setOnClickListener { startGallery() }
         binding.uploadButton.setOnClickListener { uploadImage() }
+
+        binding.textViewHasil.visibility = View.GONE
 
         return root
     }

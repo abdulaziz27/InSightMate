@@ -13,9 +13,6 @@ class ViewModelFactory(private val repository: UploadRepository) :
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return when {
-            modelClass.isAssignableFrom(MainViewModel::class.java) -> {
-                MainViewModel(repository) as T
-            }
             modelClass.isAssignableFrom(MoneyDetectorViewModel::class.java) -> {
                 MoneyDetectorViewModel(repository) as T
             }

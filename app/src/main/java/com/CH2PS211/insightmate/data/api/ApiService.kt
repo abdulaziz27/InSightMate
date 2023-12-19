@@ -1,7 +1,6 @@
 package com.CH2PS211.insightmate.data.api
 
 import okhttp3.MultipartBody
-import okhttp3.RequestBody
 import retrofit2.http.*
 
 interface ApiService {
