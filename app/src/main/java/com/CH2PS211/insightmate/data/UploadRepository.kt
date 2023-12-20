@@ -45,6 +45,22 @@ class UploadRepository private constructor(
         }
     }
 
+    fun uploadDocumentImage(imageFile: File) = liveData {
+        emit(ResultState.Loading)
+        val requestImageFile = imageFile.asRequestBody("image/jpeg".toMediaType())
+        val multipartBody = MultipartBody.Part.createFormData(
+            "file",
+            imageFile.name,
+            requestImageFile
+        )
+        try {
+            val successResponse = apiService.uploadDocumentImage(multipartBody)
+            emit(ResultState.Success(successResponse))
+        } catch (e: HttpException) {
+            emit(ResultState.Error("Gagal mengupload gambar"))
+        }
+    }
+
     companion object {
         @Volatile
         private var instance: UploadRepository? = null
@@ -55,6 +71,11 @@ class UploadRepository private constructor(
             }.also { instance = it }
 
         fun getColorInstance(apiService: ApiService) =
+            instance ?: synchronized(this) {
+                instance ?: UploadRepository(apiService)
+            }.also { instance = it }
+
+        fun getDocumentInstance(apiService: ApiService) =
             instance ?: synchronized(this) {
                 instance ?: UploadRepository(apiService)
             }.also { instance = it }

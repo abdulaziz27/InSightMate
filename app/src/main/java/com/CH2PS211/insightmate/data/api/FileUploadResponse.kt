@@ -32,3 +32,13 @@ data class ColorUploadResponse(
     @field:SerializedName("prediksi_warna")
     val prediksiWarna: String
 )
+
+data class DocumentUploadResponse(
+    @field:SerializedName("fitur")
+    val fitur: String,
+    @field:SerializedName("gambar")
+    val gambar: String,
+    @field:SerializedName("hasil_teks")
+    val hasilTeks: String
+)
+
