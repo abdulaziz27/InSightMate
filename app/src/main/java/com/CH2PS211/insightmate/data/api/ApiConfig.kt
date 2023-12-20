@@ -40,4 +40,21 @@ object ApiConfig {
             .build()
         return retrofit.create(ApiService::class.java)
     }
+
+    fun getDocumentReaderApiService(): ApiService {
+        val loggingInterceptor =
+            HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+        val client = OkHttpClient.Builder()
+            .addInterceptor(loggingInterceptor)
+            .connectTimeout(30, TimeUnit.SECONDS)
+            .readTimeout(30, TimeUnit.SECONDS)
+            .writeTimeout(30, TimeUnit.SECONDS)
+            .build()
+        val retrofit = Retrofit.Builder()
+            .baseUrl("https://predictismdocument-xiiss5i4hq-et.a.run.app")
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(client)
+            .build()
+        return retrofit.create(ApiService::class.java)
+    }
 }

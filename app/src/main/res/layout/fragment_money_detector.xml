@@ -4,17 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.moneydetector.MoneyDetectorFragment">
-
-    <com.google.android.material.progressindicator.LinearProgressIndicator
-        android:id="@+id/progressIndicator"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:indeterminate="true"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".ui.moneydetector.MoneyDetectorFragment"
+    android:layout_marginBottom="32dp">
 
     <ImageView
         android:id="@+id/previewImageView"
@@ -24,13 +15,14 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:background="#D8DADC"
         app:layout_constraintDimensionRatio="16:12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_place_holder" />
+        app:srcCompat="@drawable/ic_placeholder" />
 
     <Button
         android:id="@+id/cameraButton"
@@ -86,20 +78,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Hasil Prediksi"
+        android:text="@string/prediction_result"
         android:textStyle="bold"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/uploadButton" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progressIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_hasil" />
 
     <TextView
         android:id="@+id/textView_hasil"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="16dp"
-        android:text="Hasilnya adalah Sepuluh Ribu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/result"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/uploadButton"
+        app:layout_constraintStart_toStartOf="@+id/uploadButton"
         app:layout_constraintTop_toBottomOf="@+id/textViewLabelHasil" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,4 +13,9 @@ object Injection {
         val colorApiService = ApiConfig.getColorDetectorApiService()
         return UploadRepository.getInstance(colorApiService)
     }
+
+    fun provideDocumentRepository(): UploadRepository {
+        val documentApiService = ApiConfig.getDocumentReaderApiService()
+        return UploadRepository.getInstance(documentApiService)
+    }
 }

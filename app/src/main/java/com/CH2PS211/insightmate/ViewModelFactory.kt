@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.CH2PS211.insightmate.data.UploadRepository
 import com.CH2PS211.insightmate.data.di.Injection
 import com.CH2PS211.insightmate.ui.colordetector.ColorDetectorViewModel
+import com.CH2PS211.insightmate.ui.documentreader.DocumentReaderViewModel
 import com.CH2PS211.insightmate.ui.moneydetector.MoneyDetectorViewModel
 
 class ViewModelFactory(private val repository: UploadRepository) :
@@ -18,6 +19,9 @@ class ViewModelFactory(private val repository: UploadRepository) :
             }
             modelClass.isAssignableFrom(ColorDetectorViewModel::class.java) -> {
                 ColorDetectorViewModel(Injection.provideColorRepository()) as T
+            }
+            modelClass.isAssignableFrom(DocumentReaderViewModel::class.java) -> {
+                DocumentReaderViewModel(Injection.provideDocumentRepository()) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
@@ -37,6 +41,12 @@ class ViewModelFactory(private val repository: UploadRepository) :
         fun getColorInstance() =
             instance ?: synchronized(this) {
                 instance ?: ViewModelFactory(Injection.provideColorRepository())
+            }.also { instance = it }
+
+        @JvmStatic
+        fun getDocumentInstance() =
+            instance ?: synchronized(this) {
+                instance ?: ViewModelFactory(Injection.provideDocumentRepository())
             }.also { instance = it }
     }
 }

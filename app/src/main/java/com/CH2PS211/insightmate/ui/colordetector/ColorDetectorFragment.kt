@@ -115,16 +115,16 @@ class ColorDetectorFragment : Fragment() {
                         }
 
                         is ResultState.Success -> {
-                            showToast("Hasilnya adalah ${result.data.prediksiWarna}")
+                            showToast(getString(R.string.success_upload))
                             showLoading(false)
-                            showResult(result.data.prediksiWarna)
+                            showResult(result.data.prediksiWarna, result.data.prediksiAkurasi)
 
                             binding.textViewHasil.visibility = View.VISIBLE
                         }
 
                         is ResultState.Error -> {
                             if (result.error == "no file") {
-                                showToast("Tidak ada file yang diunggah")
+                                showToast(getString(R.string.nofile_upload))
                             } else {
                                 showToast(result.error)
                             }
@@ -144,8 +144,8 @@ class ColorDetectorFragment : Fragment() {
         Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 
-    private fun showResult(result: String) {
-        binding.textViewHasil.text = "Hasilnya adalah $result"
+    private fun showResult(result: String, accuration: String) {
+        binding.textViewHasil.text = "Warna $result, dengan akurasi sebesar $accuration"
     }
 
     override fun onDestroyView() {

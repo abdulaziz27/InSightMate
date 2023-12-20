@@ -15,5 +15,11 @@ interface ApiService {
     suspend fun uploadColorImage(
         @Part file: MultipartBody.Part
     ): ColorUploadResponse
+
+    @Multipart
+    @POST("/")
+    suspend fun uploadDocumentImage(
+        @Part file: MultipartBody.Part
+    ): DocumentUploadResponse
 }
 

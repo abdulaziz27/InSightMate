@@ -40,7 +40,7 @@ android {
 }
 
 dependencies {
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
     val cameraxVersion = "1.2.3"
 
     implementation("androidx.core:core-ktx:1.9.0")
