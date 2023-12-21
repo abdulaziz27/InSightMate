@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 object ApiConfig {
-    private const val BASE_URL = "https://predictismbanknote-xiiss5i4hq-et.a.run.app"
+    private const val BASE_URL = "https://predictismbanknotenew-xiiss5i4hq-et.a.run.app"
     private const val BASE_COLOR_URL = "https://predictismcolornew-xiiss5i4hq-et.a.run.app"
     private const val BASE_DOCUMENT_URL = "https://predictismdocument-xiiss5i4hq-et.a.run.app"
 
