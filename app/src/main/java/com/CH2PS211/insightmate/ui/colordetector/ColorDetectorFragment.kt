@@ -17,6 +17,7 @@ import com.CH2PS211.insightmate.CameraActivity
 import com.CH2PS211.insightmate.R
 import com.CH2PS211.insightmate.ViewModelFactory
 import com.CH2PS211.insightmate.data.ResultState
+import com.CH2PS211.insightmate.data.di.Injection
 import com.CH2PS211.insightmate.databinding.FragmentColorDetectorBinding
 import com.CH2PS211.insightmate.util.getImageUri
 import com.CH2PS211.insightmate.util.reduceFileImage
@@ -29,7 +30,11 @@ class ColorDetectorFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val colorDetectorViewModel by viewModels<ColorDetectorViewModel> {
-        ViewModelFactory.getColorInstance()
+        ViewModelFactory(
+            moneyRepository = Injection.provideMoneyRepository(),
+            colorRepository = Injection.provideColorRepository(),
+            documentRepository = Injection.provideDocumentRepository()
+        )
     }
 
     private var currentImageUri: Uri? = null
@@ -117,7 +122,7 @@ class ColorDetectorFragment : Fragment() {
                         is ResultState.Success -> {
                             showToast(getString(R.string.success_upload))
                             showLoading(false)
-                            showResult(result.data.prediksiWarna, result.data.prediksiAkurasi)
+                            showResult(result.data.prediksiKelasAkurasi)
 
                             binding.textViewHasil.visibility = View.VISIBLE
                         }
@@ -144,8 +149,19 @@ class ColorDetectorFragment : Fragment() {
         Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 
-    private fun showResult(result: String, accuration: String) {
-        binding.textViewHasil.text = "Warna $result, dengan akurasi sebesar $accuration"
+    private fun showResult(prediksiKelasAkurasi: Map<String, String>) {
+        val filteredResult = prediksiKelasAkurasi?.filter { (_, akurasi) ->
+            akurasi.replace("%", "").toDoubleOrNull() ?: 0.0 > 2.0
+        }
+
+        if (!filteredResult.isNullOrEmpty()) {
+            val resultString = filteredResult.entries.joinToString(", ") { (warna, akurasi) ->
+                "$warna dengan akurasi $akurasi"
+            }
+            binding.textViewHasil.text = resultString
+        } else {
+            binding.textViewHasil.text = "Tidak ada prediksi warna dengan persentase di atas 2%."
+        }
     }
 
     override fun onDestroyView() {
