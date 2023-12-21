@@ -18,6 +18,7 @@ import com.CH2PS211.insightmate.CameraActivity.Companion.CAMERAX_RESULT
 import com.CH2PS211.insightmate.R
 import com.CH2PS211.insightmate.ViewModelFactory
 import com.CH2PS211.insightmate.data.ResultState
+import com.CH2PS211.insightmate.data.di.Injection
 import com.CH2PS211.insightmate.databinding.FragmentMoneyDetectorBinding
 import com.CH2PS211.insightmate.util.getImageUri
 import com.CH2PS211.insightmate.util.reduceFileImage
@@ -29,7 +30,11 @@ class MoneyDetectorFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val moneyDetectorViewModel by viewModels<MoneyDetectorViewModel> {
-        ViewModelFactory.getInstance()
+        ViewModelFactory(
+            moneyRepository = Injection.provideMoneyRepository(),
+            colorRepository = Injection.provideColorRepository(),
+            documentRepository = Injection.provideDocumentRepository()
+        )
     }
 
     private var currentImageUri: Uri? = null

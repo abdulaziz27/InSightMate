@@ -7,41 +7,23 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 object ApiConfig {
-    fun getApiService(): ApiService {
-        val loggingInterceptor =
-            HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
-        val client = OkHttpClient.Builder()
-            .addInterceptor(loggingInterceptor)
-            .connectTimeout(30, TimeUnit.SECONDS)
-            .readTimeout(30, TimeUnit.SECONDS)
-            .writeTimeout(30, TimeUnit.SECONDS)
-            .build()
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://predictismbanknote-xiiss5i4hq-et.a.run.app")
-            .addConverterFactory(GsonConverterFactory.create())
-            .client(client)
-            .build()
-        return retrofit.create(ApiService::class.java)
+    private const val BASE_URL = "https://predictismbanknote-xiiss5i4hq-et.a.run.app"
+    private const val BASE_COLOR_URL = "https://predictismcolornew-xiiss5i4hq-et.a.run.app"
+    private const val BASE_DOCUMENT_URL = "https://predictismdocument-xiiss5i4hq-et.a.run.app"
+
+    fun getApiService(): MoneyApiService {
+        return createService(BASE_URL)
     }
 
-    fun getColorDetectorApiService(): ApiService {
-        val loggingInterceptor =
-            HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
-        val client = OkHttpClient.Builder()
-            .addInterceptor(loggingInterceptor)
-            .connectTimeout(30, TimeUnit.SECONDS)
-            .readTimeout(30, TimeUnit.SECONDS)
-            .writeTimeout(30, TimeUnit.SECONDS)
-            .build()
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://predictismcolor-xiiss5i4hq-et.a.run.app")
-            .addConverterFactory(GsonConverterFactory.create())
-            .client(client)
-            .build()
-        return retrofit.create(ApiService::class.java)
+    fun getColorDetectorApiService(): ColorApiService {
+        return createService(BASE_COLOR_URL)
     }
 
-    fun getDocumentReaderApiService(): ApiService {
+    fun getDocumentReaderApiService(): DocumentApiService {
+        return createService(BASE_DOCUMENT_URL)
+    }
+
+    private inline fun <reified T> createService(baseUrl: String): T {
         val loggingInterceptor =
             HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
         val client = OkHttpClient.Builder()
@@ -51,10 +33,10 @@ object ApiConfig {
             .writeTimeout(30, TimeUnit.SECONDS)
             .build()
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://predictismdocument-xiiss5i4hq-et.a.run.app")
+            .baseUrl(baseUrl)
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
-        return retrofit.create(ApiService::class.java)
+        return retrofit.create(T::class.java)
     }
 }

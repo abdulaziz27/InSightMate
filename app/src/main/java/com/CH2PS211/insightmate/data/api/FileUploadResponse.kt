@@ -25,10 +25,10 @@ data class ColorUploadResponse(
     val fitur: String,
     @field:SerializedName("gambar")
     val gambar: String,
-    @field:SerializedName("prediksi_akurasi")
-    val prediksiAkurasi: String,
+    @field:SerializedName("prediksi_kelas_akurasi")
+    val prediksiKelasAkurasi: Map<String, String>,
     @field:SerializedName("prediksi_kelas")
-    val prediksiKelas: Int,
+    val prediksiKelas: String,
     @field:SerializedName("prediksi_warna")
     val prediksiWarna: String
 )

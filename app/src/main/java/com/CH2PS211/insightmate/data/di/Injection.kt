@@ -1,21 +1,23 @@
 package com.CH2PS211.insightmate.data.di
 
-import com.CH2PS211.insightmate.data.UploadRepository
+import com.CH2PS211.insightmate.data.ColorRepository
+import com.CH2PS211.insightmate.data.DocumentRepository
+import com.CH2PS211.insightmate.data.MoneyRepository
 import com.CH2PS211.insightmate.data.api.ApiConfig
 
 object Injection {
-    fun provideRepository(): UploadRepository {
-        val apiService = ApiConfig.getApiService()
-        return UploadRepository.getInstance(apiService)
+    fun provideMoneyRepository(): MoneyRepository {
+        val moneyApiService = ApiConfig.getApiService()
+        return MoneyRepository.getInstance(moneyApiService)
     }
 
-    fun provideColorRepository(): UploadRepository {
+    fun provideColorRepository(): ColorRepository {
         val colorApiService = ApiConfig.getColorDetectorApiService()
-        return UploadRepository.getInstance(colorApiService)
+        return ColorRepository.getInstance(colorApiService)
     }
 
-    fun provideDocumentRepository(): UploadRepository {
+    fun provideDocumentRepository(): DocumentRepository {
         val documentApiService = ApiConfig.getDocumentReaderApiService()
-        return UploadRepository.getInstance(documentApiService)
+        return DocumentRepository.getInstance(documentApiService)
     }
 }

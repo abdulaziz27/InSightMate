@@ -13,5 +13,6 @@
     <string name="empty_image_warning">Silakan masukkan berkas gambar terlebih dahulu.</string>
 
     <string name="prediction_result">Hasil Prediksi</string>
+    <string name="color_prediction_result">Hasil Prediksi</string>
     <string name="result">Hasilnya adalah...............</string>
 </resources>
