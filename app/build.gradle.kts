@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.CH2PS211.insightmate"
+    namespace = "com.ch2ps211.insightmate"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.CH2PS211.insightmate"
+        applicationId = "com.ch2ps211.insightmate"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
