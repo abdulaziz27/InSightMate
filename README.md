@@ -1,7 +1,6 @@
 # About InSightMate
 InSightMate empowers the visually impaired with Money Detector, Color Identifier, and Document Reader, enhancing daily lives through accessible technology.
 
-
 # The Team
 |            Member             | Student ID   |        Path        |                    Role                    |                                                       Contact                                                      |
 | :---------------------------: | :----------: | :----------------: | :----------------------------------------: | :---------------------------------------------------------------------------: |
@@ -10,8 +9,8 @@ InSightMate empowers the visually impaired with Money Detector, Color Identifier
 |  Ibnu Arbianto Pratama        | M183BSY0171  |  Machine Learning  |          Machine Learning Engineer         |             [LinkedIn](https://www.linkedin.com/in/ibnuarbianto/)             |
 |  Erdiansyah                   | M384BSY0934  |  Machine Learning  |          Machine Learning Engineer         |    [LinkedIn](https://www.linkedin.com/in/erdiansyah-%E2%80%8E-a41a49279/)    |
 |  Kanaya Elfira Tumade         | M309BSX0752  |  Machine Learning  | Project Manager, Machine Learning Engineer |            [LinkedIn](https://www.linkedin.com/in/kanayatumade/)              |
-|  Daffa Zamiira Pradana        | C283BSY3309  |  Cloud Computing   |          DevOps Engineer, Designer         | [LinkedIn](https://www.linkedin.com/in/daffazp/)                              |
-|  Brilliyani Shafura Aftisyah  | C283BSX3405  |  Cloud Computing   |          DevOps Engineer, Designer         | [LinkedIn](https://www.linkedin.com/in/brilliyanishaf/)                       |
+|  Daffa Zamiira Pradana        | C283BSY3309  |  Cloud Computing   |          Cloud Engineer                    | [LinkedIn](https://www.linkedin.com/in/daffazp/)                              |
+|  Brilliyani Shafura Aftisyah  | C283BSX3405  |  Cloud Computing   |          Cloud Engineer                    | [LinkedIn](https://www.linkedin.com/in/brilliyanishaf/)                       |
 
 # Machine Learning Repositories
 | Learning Paths                                        | Link                                                                              |
