@@ -3,7 +3,7 @@ InSightMate empowers the visually impaired with Money Detector, Color Identifier
 
 
 # The Team
-|            Member             | Student ID   |        Path        |                    Role                    |                                                       Contacts                                                      |
+|            Member             | Student ID   |        Path        |                    Role                    |                                                       Contact                                                      |
 | :---------------------------: | :----------: | :----------------: | :----------------------------------------: | :---------------------------------------------------------------------------: |
 |  Abdul Aziz                   | A120BSY2777  |  Mobile Development|          Android Mobile Developer          |           [LinkedIn](https://www.linkedin.com/in/itsabdulaziz/)               |
 |  Harris Abdillah Faqih        | A198BSY2121  |  Mobile Development|          Android Mobile Developer          |   [LinkedIn](https://www.linkedin.com/in/harris-faqih-485a41284/)             |
