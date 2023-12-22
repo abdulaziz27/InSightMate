@@ -47,6 +47,13 @@ class MoneyDetectorFragment : Fragment() {
         _binding = FragmentMoneyDetectorBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        binding.cameraButton.contentDescription = getString(R.string.cameraDescription)
+        binding.cameraXButton.contentDescription = getString(R.string.cameraXDescription)
+        binding.galleryButton.contentDescription = getString(R.string.galleryDescription)
+        binding.uploadButton.contentDescription = getString(R.string.uploadDescription)
+        binding.previewImageView.contentDescription = getString(R.string.previewDescription)
+        binding.textViewLabelHasil.contentDescription = getString(R.string.resultDescription)
+
         binding.cameraButton.setOnClickListener { startCamera() }
         binding.cameraXButton.setOnClickListener { startCameraX() }
         binding.galleryButton.setOnClickListener { startGallery() }
@@ -122,7 +129,7 @@ class MoneyDetectorFragment : Fragment() {
                         is ResultState.Success -> {
                             showToast(getString(R.string.success_upload))
                             showLoading(false)
-                            showResult(result.data.featureNominal.prediksiNominal, result.data.featureNominal.prediksiAkurasi)
+                            showResult(result.data.featureNominal.prediksiNominal)
 
                             binding.textViewHasil.visibility = View.VISIBLE
                         }
@@ -149,8 +156,9 @@ class MoneyDetectorFragment : Fragment() {
         Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 
-    private fun showResult(result: String, accuration: String) {
-        binding.textViewHasil.text = "$result Rupiah, dengan akurasi sebesar $accuration"
+    private fun showResult(result: String) {
+        val resultDescription = getString(R.string.moneyPredictionResultDescription)
+        binding.textViewHasil.text = "$resultDescription $result Rupiah"
     }
 
     override fun onDestroyView() {
