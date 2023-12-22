@@ -75,11 +75,12 @@
 
     <TextView
         android:id="@+id/textViewLabelHasil"
-        android:layout_width="wrap_content"
+        android:layout_width="395dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/color_prediction_result"
         android:textSize="20dp"
+        android:gravity="center"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -100,7 +101,7 @@
     <TextView
         android:id="@+id/textView_hasil"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="230dp"
         android:layout_marginTop="8dp"
         android:text="@string/result"
         android:textSize="18dp"

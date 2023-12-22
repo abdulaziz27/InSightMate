@@ -47,6 +47,13 @@ class DocumentReaderFragment : Fragment() {
         _binding = FragmentDocumentReaderBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        binding.cameraButton.contentDescription = getString(R.string.cameraDescription)
+        binding.cameraXButton.contentDescription = getString(R.string.cameraXDescription)
+        binding.galleryButton.contentDescription = getString(R.string.galleryDescription)
+        binding.uploadButton.contentDescription = getString(R.string.uploadDescription)
+        binding.previewImageView.contentDescription = getString(R.string.previewDescription)
+        binding.textViewLabelHasil.contentDescription = getString(R.string.docPredictionResultDescription)
+
         binding.cameraButton.setOnClickListener { startCamera() }
         binding.cameraXButton.setOnClickListener { startCameraX() }
         binding.galleryButton.setOnClickListener { startGallery() }

@@ -15,4 +15,17 @@
     <string name="prediction_result">Hasil Prediksi</string>
     <string name="color_prediction_result">Hasil Prediksi</string>
     <string name="result">Hasilnya adalah...............</string>
+
+    <string name="cameraDescription">Meluncurkan kamera untuk mengambil gambar</string>
+    <string name="cameraXDescription">Meluncurkan CameraX untuk mengambil gambar</string>
+    <string name="galleryDescription">Membuka galeri untuk memilih gambar</string>
+    <string name="previewDescription">preview gambar</string>
+    <string name="uploadDescription">Mengunggah gambar yang dipilih untuk diproses</string>
+    <string name="moneyPredictionResultDescription">Nominalnya adalah</string>
+    <string name="colorPredictionIntro">Warnanya adalah  </string>
+    <string name="colorPredictionResultDescription">%1$s dengan akurasi %2$s</string>
+    <string name="docPredictionResultDescription">Hasil Prediksi text-nya adalah </string>
+    <string name="resultDescription">Berikut hasil prediksi gambar</string>
+    <string name="noColorPredictionAbove20Percent">Tidak ada prediksi warna dengan persentase di atas 20%.</string>
+
 </resources>

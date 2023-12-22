@@ -47,6 +47,13 @@ class ColorDetectorFragment : Fragment() {
         _binding = FragmentColorDetectorBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        binding.cameraButton.contentDescription = getString(R.string.cameraDescription)
+        binding.cameraXButton.contentDescription = getString(R.string.cameraXDescription)
+        binding.galleryButton.contentDescription = getString(R.string.galleryDescription)
+        binding.uploadButton.contentDescription = getString(R.string.uploadDescription)
+        binding.previewImageView.contentDescription = getString(R.string.previewDescription)
+        binding.textViewLabelHasil.contentDescription = getString(R.string.resultDescription)
+
         binding.cameraButton.setOnClickListener { startCamera() }
         binding.cameraXButton.setOnClickListener { startCameraX() }
         binding.galleryButton.setOnClickListener { startGallery() }
@@ -151,16 +158,19 @@ class ColorDetectorFragment : Fragment() {
 
     private fun showResult(prediksiKelasAkurasi: Map<String, String>) {
         val filteredResult = prediksiKelasAkurasi?.filter { (_, akurasi) ->
-            akurasi.replace("%", "").toDoubleOrNull() ?: 0.0 > 2.0
+            akurasi.replace("%", "").toDoubleOrNull() ?: 0.0 > 20.0
         }
 
         if (!filteredResult.isNullOrEmpty()) {
+            val colorPredictionResultDescription = getString(R.string.colorPredictionResultDescription)
+
             val resultString = filteredResult.entries.joinToString(", ") { (warna, akurasi) ->
-                "$warna dengan akurasi $akurasi"
+                String.format(colorPredictionResultDescription, warna, akurasi)
             }
-            binding.textViewHasil.text = resultString
+
+            binding.textViewHasil.text = getString(R.string.colorPredictionIntro) + " " + resultString
         } else {
-            binding.textViewHasil.text = "Tidak ada prediksi warna dengan persentase di atas 2%."
+            binding.textViewHasil.text = getString(R.string.noColorPredictionAbove20Percent)
         }
     }
 
